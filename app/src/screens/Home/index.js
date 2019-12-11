@@ -5,6 +5,8 @@ import styles from './styles';
 
 import Header from '../../components/Header';
 import Search from '../../components/Search';
+import ResultsList from '../../components/ResultsList';
+import Pagination from '../../components/Pagination';
 
 export default class Home extends Component {
 
@@ -43,6 +45,8 @@ export default class Home extends Component {
             <View style={styles.container}>
                 <Header />
                 <Search />
+                <ResultsList {...this.state.heroes} />
+                <Pagination />
             </View>
         );
     }
