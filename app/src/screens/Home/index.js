@@ -1,16 +1,48 @@
 import React, { Component } from 'react';
-import {
-    View,
-    Text
-} from 'react-native';
+import { View } from 'react-native';
 
-// import { Container } from './styles';
+import styles from './styles';
+
+import Header from '../../components/Header';
+import Search from '../../components/Search';
 
 export default class Home extends Component {
+
+    state = {
+        heroes: [
+            {
+                id: 1,
+                image: "http://www.google.com.br",
+                name: "Tony Stark"
+            },
+            {
+                id: 2,
+                image: "http://www.google.com.br",
+                name: "Capitão América"
+            },
+            {
+                id: 3,
+                image: "http://www.google.com.br",
+                name: "Hulk"
+            },
+            {
+                id: 4,
+                image: "http://www.google.com.br",
+                name: "Viúva Negra"
+            },
+            {
+                id: 5,
+                image: "http://www.google.com.br",
+                name: "Homem Aranha"
+            }
+        ]
+    }
+
     render() {
         return (
-            <View>
-                <Text>Teste</Text>
+            <View style={styles.container}>
+                <Header />
+                <Search />
             </View>
         );
     }
