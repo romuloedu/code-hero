@@ -11,6 +11,7 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         minWidth: "100%",
+        maxHeight: 100,
         justifyContent: "flex-start",
         alignItems: "center",
         borderWidth: 1,

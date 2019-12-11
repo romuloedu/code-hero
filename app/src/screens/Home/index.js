@@ -11,6 +11,8 @@ import Pagination from '../../components/Pagination';
 export default class Home extends Component {
 
     state = {
+        querySearch: null,
+        filteredCharacters: [],
         results: [
             {
                 "id": 1010354,
@@ -885,12 +887,36 @@ export default class Home extends Component {
         ]
     }
 
+    handleSearch = query => {
+
+        let filteredCharacters = null;
+
+        if (query) {
+
+            const formatQuery = query.toLowerCase();
+
+            filteredCharacters = this.state.results
+                .filter(result => result.name
+                    .toLowerCase()
+                    .includes(formatQuery));
+        }
+        else {
+            filteredCharacters = [...this.state.results];
+        }
+
+        this.setState({ filteredCharacters });
+    }
+
+    componentDidMount = () => {
+        this.handleSearch();
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <Header />
-                <Search />
-                <ResultsList {...this.state.results} />
+                <Search filterCharacters={this.handleSearch} />
+                <ResultsList {...this.state.filteredCharacters} />
                 <Pagination />
             </View>
         );

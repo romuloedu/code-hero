@@ -14,7 +14,9 @@ export default class Search extends Component {
                 <Text style={styles.searchText}>
                     Nome do Personagem
                 </Text>
-                <TextInput style={styles.searchInput} />
+                <TextInput
+                    style={styles.searchInput}
+                    onChangeText={this.props.filterCharacters} />
             </View>
         )
     }
