@@ -2,8 +2,11 @@
 
 Code Hero é um app construído com React Native que consome dados da API oficial da Marvel para listar informações de todos os seus heróis.
 
-> Este aplicativo foi construído utilizando o [Expo](https://expo.io/)
-> visando facilitar a execução do app em celulares remotos.
+> Este aplicativo foi construído utilizando 
+> o [Expo](https://expo.io/) visando 
+> facilitar a execução do app em 
+> celulares remotos sem a necessidade
+> de gerar apks.
 
 # Funcionalidades
 
