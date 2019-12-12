@@ -20,7 +20,11 @@ export default class Home extends Component {
         currentPage: 1,
         querySearch: null,
         serverData: [],
-        pages: []
+        pagination: {
+            hasNextPage: false,
+            hasPreviousPage: false,
+            pages: []
+        }
     }
 
     fetchData = async () => {
@@ -44,22 +48,30 @@ export default class Home extends Component {
         const { currentPage } = this.state;
         const totalPages = Math.trunc(total / limit) + ((total % limit) ? 1 : 0);
         var cont = 1;
-        var pagesAux = [];
-        var auxCont = (currentPage === 1) ? 1 : currentPage - 1;
+        var pagesArray = [];
+        var nextPage = (currentPage === 1) ? 1 : currentPage - 1;
 
-        while (cont <= 3 &&
-            auxCont <= totalPages) {
+        hasPreviousPage = (currentPage > 1);
+        hasNextPage = (currentPage < totalPages);
 
-            pagesAux.push({
-                id: auxCont,
-                isCurrentPage: currentPage === auxCont
+        while (cont <= 3 && nextPage <= totalPages) {
+
+            pagesArray.push({
+                id: nextPage,
+                isCurrentPage: currentPage === nextPage
             });
 
             cont++;
-            auxCont++;
+            nextPage++;
         }
 
-        this.setState({ pages: pagesAux });
+        this.setState({
+            pagination: {
+                pages: pagesArray,
+                hasPreviousPage,
+                hasNextPage
+            }
+        });
     }
 
     handlePageSearch = async (id) => {
@@ -88,7 +100,8 @@ export default class Home extends Component {
                 <Header />
                 <Search filterCharacters={this.handleSearch} />
                 <ResultsList serverData={this.state.serverData} />
-                <Pagination pages={this.state.pages}
+                <Pagination pagination={this.state.pagination}
+                    currentPage={this.state.currentPage}
                     getPage={this.handlePageSearch} />
             </View>
         );

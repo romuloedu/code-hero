@@ -3,12 +3,11 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     paginationContainer: {
         flexDirection: "row",
-        alignSelf: "baseline",
         width: "100%",
         paddingTop: 18,
         paddingBottom: 24,
         borderTopWidth: 1,
-        justifyContent: "center",
+        justifyContent: "space-around",
         alignItems: "center",
         borderTopColor: "#D42026",
         borderBottomColor: "#D42026",
@@ -22,7 +21,7 @@ export default StyleSheet.create({
         borderRadius: 20,
         justifyContent: "center",
         alignItems: "center",
-        marginHorizontal: 15
+        marginHorizontal: 10
     },
     paginationButtonActived: {
         borderWidth: 1,
@@ -37,5 +36,16 @@ export default StyleSheet.create({
     },
     paginationButtonTextActived: {
         color: "#FFF"
+    },
+    leftArrowContainer: {
+        marginLeft: 30,
+        marginRight: 60
+    },
+    rightArrowContainer: {
+        marginLeft: 60,
+        marginRight: 30
+    },
+    numeratedButtonsContainer: {
+        flexDirection: "row"
     }
 });
