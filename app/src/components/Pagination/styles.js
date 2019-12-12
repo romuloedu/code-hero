@@ -4,6 +4,7 @@ export default StyleSheet.create({
     paginationContainer: {
         flexDirection: "row",
         width: "100%",
+        minHeight: 110,
         paddingTop: 18,
         paddingBottom: 24,
         borderTopWidth: 1,

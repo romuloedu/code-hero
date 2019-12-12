@@ -42,5 +42,16 @@ export default StyleSheet.create({
     resultHeaderName: {
         fontSize: 15,
         color: "#FFF"
+    },
+    emptyListContainer: {
+        flex: 1,
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    emptyListText: {
+        color: "#D42026",
+        fontSize: 18,
+        fontWeight: "bold"
     }
 });

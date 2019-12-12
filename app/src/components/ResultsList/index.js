@@ -21,7 +21,7 @@ export default class ResultsList extends Component {
                     <Text style={styles.resultHeaderName}>Nome</Text>
                 </View>
                 {
-                    (results) ?
+                    (results && results.length) ?
                         results.map(result => (
                             <View style={styles.resultCard} key={result.id} >
                                 <Image source={{
@@ -33,7 +33,13 @@ export default class ResultsList extends Component {
                                 </Text>
                             </View>
                         ))
-                        : null
+                        : (
+                            <View style={styles.emptyListContainer}>
+                                <Text style={styles.emptyListText}>
+                                    Nenhum resultado encontrado.
+                                </Text>
+                            </View>
+                        )
                 }
             </View>
         );
