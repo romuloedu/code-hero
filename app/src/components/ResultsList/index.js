@@ -12,9 +12,7 @@ export default class ResultsList extends Component {
 
     render() {
 
-        // Converte o objeto em um array.
-        const personsArray = Object.keys(this.props)
-            .map(i => this.props[i]);
+        const { results } = this.props.serverData;
 
         return (
             <View style={styles.resultsContainer}>
@@ -23,17 +21,19 @@ export default class ResultsList extends Component {
                     <Text style={styles.resultHeaderName}>Nome</Text>
                 </View>
                 {
-                    personsArray.map(person => (
-                        <View style={styles.resultCard} key={person.id} >
-                            <Image source={{
-                                uri: person.thumbnail.path
-                                    + '.' + person.thumbnail.extension
-                            }} style={styles.resultThumbnail} />
-                            <Text style={styles.resultName}>
-                                {person.name}
-                            </Text>
-                        </View>
-                    ))
+                    (results) ?
+                        results.map(result => (
+                            <View style={styles.resultCard} key={result.id} >
+                                <Image source={{
+                                    uri: result.thumbnail.path
+                                        + '.' + result.thumbnail.extension
+                                }} style={styles.resultThumbnail} />
+                                <Text style={styles.resultName}>
+                                    {result.name}
+                                </Text>
+                            </View>
+                        ))
+                        : null
                 }
             </View>
         );

@@ -14,8 +14,8 @@ export default StyleSheet.create({
         maxHeight: 100,
         justifyContent: "flex-start",
         alignItems: "center",
-        borderWidth: 1,
-        borderColor: "#D42026"
+        borderBottomWidth: 1,
+        borderBottomColor: "#D42026"
     },
     resultThumbnail: {
         width: 65,
@@ -25,7 +25,7 @@ export default StyleSheet.create({
         marginVertical: 18
     },
     resultName: {
-        fontSize: 18
+        fontSize: 15
     },
     resultHeaderContainer: {
         flexDirection: "row",

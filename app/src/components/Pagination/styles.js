@@ -8,7 +8,7 @@ export default StyleSheet.create({
         paddingTop: 18,
         paddingBottom: 24,
         borderTopWidth: 1,
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: "center",
         borderTopColor: "#D42026",
         borderBottomColor: "#D42026",
@@ -21,7 +21,8 @@ export default StyleSheet.create({
         borderColor: "#D42026",
         borderRadius: 20,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        marginHorizontal: 15
     },
     paginationButtonActived: {
         borderWidth: 1,
